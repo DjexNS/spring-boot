@@ -1,0 +1,67 @@
+//allprojects {
+ //   tasks.withType(JavaCompile) {
+ //       options.incremental = true
+ //   }
+//}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE")
+		classpath("org.springframework:springloaded:1.2.4.RELEASE")
+    }
+}
+ 
+apply plugin: 'java'
+compileJava {
+    //enable compilation in a separate daemon process
+    options.fork = true
+
+    //enable incremental compilation
+    options.incremental = true
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+apply plugin: 'application'
+run {
+    args 'sample.txt'
+}
+ 
+jar {
+    baseName = 'try-everything'
+    version =  '0.1.0'
+}
+ 
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+ 
+dependencies {
+    compile ('org.springframework.boot:spring-boot-starter-web'){
+      exclude module: 'org.springframework.boot:spring-boot-starter-logging'
+      exclude module: 'logback-classic'
+    }
+    compile("org.springframework.boot:spring-boot-starter-security"){
+      exclude module: 'org.springframework.boot:spring-boot-starter-logging'
+      exclude module: 'logback-classic'
+    }
+  compile ('org.springframework.boot:spring-boot-starter-log4j')
+  compile ('org.thymeleaf:thymeleaf-spring4')
+  compile ('org.webjars:bootstrap:3.3.5')
+  compile ('com.google.guava:guava:19.0-rc2')
+  
+  testCompile("junit:junit") 
+} 
+ 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9-rc-1'
+}
+

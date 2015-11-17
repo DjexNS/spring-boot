@@ -1,0 +1,47 @@
+#main  {
+   position: relative;
+}
+
+#main:before {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("http://fullhdpictures.com/wp-content/uploads/2015/10/Nature-Screensaver.jpg");
+    background: center center cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    width: 100%;
+    height: 160%;
+    opacity : 0.8;
+    z-index: -1;
+}
+
+#myBla {
+	padding-left: 41%
+}
+
+a {
+	color: cyan;
+	padding: 3%;
+	float: right;
+}
+
+#zapis-form {
+	margin: auto;
+	width: 30%;
+}
+
+.form-group {
+	margin: auto;
+	padding: 0.3em;	
+}
+
+#fileDescription {
+	height: 10em;
+}
+
+#langButtons {
+	padding-left: 81%;
+}

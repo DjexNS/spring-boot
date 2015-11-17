@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">	
+<head lang="en">
+	<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+	<link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" type="text/css" media="screen" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width = device-width, initial-scale = 1"/>
+	<title>Login page</title>
+</head>
+<body>
+	
+	<div th:if="${param.error}">Invalid username and password.</div>
+	<div th:if="${param.logout}">You have been logged out.</div>
+			
+	<div id="main">	
+		<div class="page-header">
+			<h1>Welcome!</h1>
+		</div>
+		<div>
+			<form class="container form-horizontal" th:action="@{/login}" method="post">
+				<div class="form-group" >
+					<label class="control-label"> User Name : </label>
+					<div>
+						<input class="form-control" type="text" name="username" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label"> Password: </label>
+					<div >
+						<input class="form-control" type="password" name="password" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="control-label">
+						<input class="btn btn-info" type="submit" value="Sign In" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
