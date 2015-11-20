@@ -57,7 +57,7 @@ dependencies {
   compile ('org.thymeleaf:thymeleaf-spring4')
   compile ('org.webjars:bootstrap:3.3.5')
   compile ('com.google.guava:guava:19.0-rc2')
-  
+  compile ('mysql:mysql-connector-java')
   compile 'org.springframework.data:spring-data-jpa:1.9.1.RELEASE'
   
   testCompile("junit:junit") 
