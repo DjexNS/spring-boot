@@ -53,18 +53,17 @@ public class SampleController {
 	@RequestMapping("/")
 	public String index(Model model) {
 		Record zapis = new Record();
-		model.addAttribute("zapis", zapis); // prvi clan je atribut,
-											// moze se zvati bilo kako,
-											// i povezuje se se view-om,
-											// dok je drugi sama
-											// poruka
-											// ili objekat
-		return "hello"; // prikazujemo tj. povezujemo sa hello.html templejtom
+		model.addAttribute("zapis", zapis); // first member is an attribute,
+											// it can be named as we like
+											// and it connects with the view,
+											// the second attribute is the
+											// message itself, or an object
+
+		return "hello"; // connecting and rendering the hello template
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
 	public @ResponseBody String provideUploadInfo() {
 		return "upload";
 	}
-
 }

@@ -25,18 +25,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${roleUser}")
 	private String roleData;
 
-	// @Value("${spring.data1}")
-	// private String data1;
-
-	// @Value("${spring.data2}")
-	// private String data2;
-
-	// @Value("${spring.data3}")
-	// private String data3;
-
-	// @Value("${spring.data4}")
-	// private String data4;
-
 	@Value("${map}")
 	private String readMap;
 
