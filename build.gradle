@@ -33,7 +33,7 @@ run {
 }
  
 jar {
-    baseName = 'try-everything'
+    baseName = 'spring-boot'
     version =  '0.1.0'
 }
  
@@ -58,7 +58,9 @@ dependencies {
   compile ('org.webjars:bootstrap:3.3.5')
   compile ('com.google.guava:guava:19.0-rc2')
   compile ('mysql:mysql-connector-java')
-  //compile 'org.springframework.data:spring-data-jpa:1.9.1.RELEASE'
+  
+  //compile ('org.hibernate:hibernate-core:4.3.11.Final')
+  //compile ('org.hibernate:hibernate-annotations:3.5.6-Final')
   
   testCompile("junit:junit") 
 } 

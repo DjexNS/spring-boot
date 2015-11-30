@@ -19,6 +19,18 @@ public class SampleController {
 
 	static Logger LOGGER = LoggerFactory.getLogger(SampleController.class.getName());
 
+	@RequestMapping("/")
+	public String index(Model model) {
+		Record zapis = new Record();
+		model.addAttribute("zapis", zapis); // first member is an attribute,
+		// it can be named as we like
+		// and it connects with the view,
+		// the second attribute is the
+		// message itself, or an object
+
+		return "hello"; // connecting and rendering the hello template
+	}
+
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public @ResponseBody String handleFileUpload(@RequestParam("fileName") String fileName,
 			@RequestParam("fileDescription") String fileDescription,
@@ -48,18 +60,6 @@ public class SampleController {
 		} else {
 			return "You failed to upload " + fileName + " because the file was empty.";
 		}
-	}
-
-	@RequestMapping("/")
-	public String index(Model model) {
-		Record zapis = new Record();
-		model.addAttribute("zapis", zapis); // first member is an attribute,
-											// it can be named as we like
-											// and it connects with the view,
-											// the second attribute is the
-											// message itself, or an object
-
-		return "hello"; // connecting and rendering the hello template
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)

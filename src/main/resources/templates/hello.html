@@ -7,10 +7,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width = device-width, initial-scale = 1"/>
+	<!-- JQuery import -->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<title>HELLO</title>
 </head>
 <body>
-	
+	<!-- Upload file form -->
 	<div id="main">
 		<form class="container form-horizontal" id="zapis-form" role="form" enctype="multipart/form-data"
 			th:action="@{/upload}" action="/upload/redirect" method="POST" th:object="${zapis}">
@@ -27,6 +29,7 @@
 				<label class="control-label" for="fileUpload" th:text="#{fileUpload}"></label>
 				<input type="file" id="fileUpload" name="fileUpload" th:field="${zapis.fileUpload}" />			
 			</div>
+			<span id="upload-file-message"></span>
 			<div class="form-group">
 				<label class="control-label" for="fileName" th:text="#{fileName}"></label>			
 				<input class="form-control" type="text" id="fileName" name="fileName" th:field="${zapis.fileName}"
@@ -51,6 +54,6 @@
 			</div>
 		</form>
 	</div>
-	
+		
 </body>
 </html>
